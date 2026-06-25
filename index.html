@@ -246,7 +246,7 @@
 <body class="bg-bg-primary text-text-primary font-body overflow-x-hidden">
 
     <audio id="background-audio" loop preload="metadata">
-        <source src="https://pub-1953a6673e864f3488c645252f75de98.r2.dev/June/Venugopal%20%26%20Manila%20-%20gunveen/The%20Soul%20of%20Radhe%20Shyam%20Prabhas%20Pooja%20Hegde%20Radha%20Krishna%20Kumar%20Thaman%20S%20UV%20Creations%20-%20UV%20Creations%20(128k)%20(mp3cut.net).mp3" type="audio/mpeg">
+        <source src="https://pub-1953a6673e864f3488c645252f75de98.r2.dev/June/Venugopal%20%26%20Manila%20-%20gunveen/YTMP3GG_YouTube_Love-Story-Indila-Fairy-Version_Media_Y8iCokAK0PY_009_128k.mp3" type="audio/mpeg">
     </audio>
 
     <button id="audio-toggle" class="fixed bottom-6 right-6 bg-primary-accent hover:bg-opacity-90 hover:scale-110 text-white p-4 rounded-full transition-all duration-300 z-[100] shadow-xl border border-white/20 backdrop-blur-sm opacity-90 hover:opacity-100">
@@ -298,14 +298,10 @@
                 </p>
 
                 <!-- Surname line -->
-                <div class="w-full flex items-center justify-center gap-2 my-2">
-                    <span class="text-xs uppercase tracking-[0.2em] font-semibold text-secondary-accent">Gopireddy</span>
-                    <div class="flex items-center gap-0 flex-1 max-w-[40px]">
-                        <div class="h-[1px] bg-secondary-accent flex-1"></div>
-                        <div class="w-[5px] h-[5px] rounded-full bg-secondary-accent mx-[3px] flex-shrink-0"></div>
-                        <div class="h-[1px] bg-secondary-accent flex-1"></div>
-                    </div>
-                    <span class="text-xs uppercase tracking-[0.2em] font-semibold text-secondary-accent">Rangineni</span>
+                <div class="w-full flex items-center justify-center gap-3 my-2">
+                    <div class="h-[1px] bg-borders-dividers flex-1 max-w-[40px]"></div>
+                    <span class="text-xs uppercase tracking-[0.2em] font-semibold text-secondary-accent">Gopireddy &nbsp;&rarr;&nbsp; Rangineni</span>
+                    <div class="h-[1px] bg-borders-dividers flex-1 max-w-[40px]"></div>
                 </div>
 
                 <!-- Two families subtext -->
@@ -454,7 +450,7 @@
         <section class="py-20 md:py-28 bg-bg-primary">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 max-w-2xl mx-auto">
-                    <p class="text-sm tracking-[0.3em] text-secondary-accent uppercase mb-4 font-semibold">The Festivities</p>
+                    <p class="text-sm tracking-[0.3em] text-secondary-accent uppercase mb-4 font-semibold">The Celebration</p>
                     <h2 class="text-[3rem] md:text-7xl font-headings mb-6 text-primary-accent leading-tight">A Divine Celebration</h2>
                     <p class="text-xl md:text-2xl text-text-secondary font-body italic leading-relaxed">
                         A celebration of sacred tradition and joyful union, crafted with love for you to share in our joy.
@@ -630,21 +626,7 @@
                         </div>
                     </div>
 
-                    <!-- 4. EVENT YOU WILL JOIN -->
-                    <div id="events-card" class="bg-white p-8 md:p-10 border border-borders-dividers shadow-soft hover:shadow-md transition-shadow duration-300 rounded-2xl">
-                        <div class="text-center mb-8">
-                            <h3 class="text-2xl md:text-3xl font-body italic text-primary-accent mb-2 font-semibold">Event You Will Join</h3>
-                            <p class="text-text-secondary text-lg font-body">Confirm your attendance</p>
-                        </div>
-                        <div class="space-y-4">
-                            <label class="cursor-pointer flex items-center gap-4 border border-borders-dividers p-4 rounded-xl hover:bg-bg-secondary transition-colors has-[:checked]:bg-primary-accent has-[:checked]:border-primary-accent has-[:checked]:text-white shadow-sm">
-                                <input type="checkbox" name="event" value="Wedding" class="w-5 h-5 accent-secondary-accent">
-                                <span class="text-base md:text-lg font-body">Wedding <span class="opacity-70">· Aug 15</span></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- 5. WORDS FOR FOREVER -->
+                    <!-- 4. WORDS FOR FOREVER -->
                     <div id="message-card" class="bg-white p-8 md:p-10 border border-borders-dividers shadow-soft hover:shadow-md transition-shadow duration-300 rounded-2xl">
                         <div class="text-center mb-8">
                             <h3 class="text-2xl md:text-3xl font-body italic text-primary-accent mb-2 font-semibold">Words for Forever</h3>
@@ -1203,7 +1185,7 @@
 
         // Dim secondary questions when declining
         const attendingRadios = document.querySelectorAll('input[name="attending"]');
-        const secondarySectionIds = ['guess-card', 'mood-card', 'events-card', 'message-card'];
+        const secondarySectionIds = ['guess-card', 'mood-card', 'message-card'];
         attendingRadios.forEach(radio => {
             radio.addEventListener('change', (e) => {
                 secondarySectionIds.forEach(id => {
@@ -1223,9 +1205,8 @@
             const attendingRaw = form.querySelector('input[name="attending"]:checked')?.value || 'yes';
             const accepting = attendingRaw === 'yes';
 
-            // Selected events -> comma separated string
-            const selectedEvents = Array.from(form.querySelectorAll('input[name="event"]:checked'))
-                .map(c => c.value).join(', ');
+            // Single event — always Wedding
+            const selectedEvents = 'Wedding';
 
             const message = (form.querySelector('#words')?.value || '').trim();
             const guess = accepting
